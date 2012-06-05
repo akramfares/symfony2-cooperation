@@ -1,0 +1,53 @@
+{% extends 'msqlfacoopBundle::layout.html.twig' %}
+
+{% block title %}Institution : {{ entity.institution }} {% endblock %}
+
+{% block content %}
+
+
+<table class="record_properties">
+    <tbody>
+        <tr>
+            <th>Id</th>
+            <td>{{ entity.id }}</td>
+        </tr>
+        <tr>
+            <th>Institution</th>
+            <td>{{ entity.institution }}</td>
+        </tr>
+        <tr>
+            <th>Nature</th>
+            <td>{{ entity.nature }}</td>
+        </tr>
+        <tr>
+            <th>Adresse</th>
+            <td>{{ entity.adresse }}</td>
+        </tr>
+        <tr>
+            <th>Pays</th>
+            <td>{{ entity.pays }}</td>
+        </tr>
+    </tbody>
+</table>
+
+<ul class="record_actions">
+    <li>
+        <a href="{{ path('institution') }}" class="retour" style="color:white">
+            Retour à la liste
+        </a>
+    </li>
+    <li>
+        <a href="{{ path('institution_edit', { 'id': entity.id }) }}" class="modifier" style="color:white">
+            Edit
+        </a>
+    </li>
+    <li>
+        <form action="{{ path('institution_delete', { 'id': entity.id }) }}" method="post">
+            {{ form_widget(delete_form) }}
+            <button type="submit" class="supprimer" style="color:white">Delete</button>
+        </form>
+    </li>
+</ul>
+
+
+{% endblock %}

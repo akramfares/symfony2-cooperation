@@ -1,0 +1,7 @@
+parameters:
+#    msqlfacoop.example.class: msql\facoopBundle\Example
+
+services:
+#    msqlfacoop.example:
+#        class: %msqlfacoop.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

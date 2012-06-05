@@ -1,0 +1,65 @@
+{% extends 'msqlfacoopBundle::layout.html.twig' %}
+
+{% block title %}Contact : {{ entity.nom }} {{ entity.prenom }} {% endblock %}
+
+{% block content %}
+
+<table class="record_properties">
+    <tbody>
+        <tr>
+            <th>Id</th>
+            <td>{{ entity.id }}</td>
+        </tr>
+        <tr>
+            <th>Nom</th>
+            <td>{{ entity.nom }}</td>
+        </tr>
+        <tr>
+            <th>Prenom</th>
+            <td>{{ entity.prenom }}</td>
+        </tr>
+        <tr>
+            <th>Fonction</th>
+            <td>{{ entity.fonction }}</td>
+        </tr>
+        <tr>
+            <th>Tel</th>
+            <td>{{ entity.tel }}</td>
+        </tr>
+        <tr>
+            <th>Fax</th>
+            <td>{{ entity.fax }}</td>
+        </tr>
+        <tr>
+            <th>Mail</th>
+            <td>{{ entity.mail }}</td>
+        </tr>
+        <tr>
+            <th>Institution</th>
+            <td>{{ entity.institution }}</td>
+        </tr>
+    </tbody>
+</table>
+
+<ul class="record_actions">
+    <li>
+        <a href="{{ path('contacts') }}" class="retour" style="color:white">
+            Retour à la liste
+        </a>
+    </li>
+    <li>
+        <a href="{{ path('contacts_edit', { 'id': entity.id }) }}" class="modifier" style="color:white">
+            Edit
+        </a>
+    </li>
+    <li>
+        <form action="{{ path('contacts_delete', { 'id': entity.id }) }}" method="post">
+            {{ form_widget(delete_form) }}
+            <button type="submit" class="supprimer" style="color:white">Delete</button>
+        </form>
+    </li>
+</ul>
+
+
+{% endblock %}
+

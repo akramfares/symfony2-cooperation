@@ -1,0 +1,34 @@
+{% extends 'msqlfacoopBundle::layout.html.twig' %}
+
+{% block title %}Ajouter un Domaine{% endblock %}
+
+{% block content %}
+
+<form action="{{ path('domaines_create') }}" method="post" {{ form_enctype(form) }}>
+    <div class="error">
+	{{ form_errors(form) }}
+	</div>
+	<table>
+	    <tr>
+			<td>{{ form_label(form.domaines) }}</td>
+			<td>
+			{{ form_errors(form.domaines) }}
+			{{ form_widget(form.domaines) }}
+			</td>
+		</tr>
+	</table>
+	
+	{{ form_rest(form) }}
+	
+	<input type="submit" class="ajouter" style="color:white"/>
+</form>
+
+<ul class="record_actions">
+    <li>
+        <a href="{{ path('domaines') }}" class="retour" style="color:white">
+            Retour à la liste
+        </a>
+    </li>
+</ul>
+
+{% endblock %}

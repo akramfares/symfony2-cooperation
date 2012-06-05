@@ -1,0 +1,27 @@
+Cooperations:
+  type: entity
+  table: cooperations
+  fields:
+    id:
+      id: true
+      type: integer
+      unsigned: false
+      nullable: false
+      generator:
+        strategy: IDENTITY
+    objectifs:
+      type: string
+      length: 45
+      fixed: false
+      nullable: true
+  oneToOne:
+    contacts:
+      targetEntity: Contacts
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        Contacts_id:
+          referencedColumnName: id
+      orphanRemoval: false
+  lifecycleCallbacks: {  }

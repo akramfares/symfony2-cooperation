@@ -1,0 +1,50 @@
+{% extends 'msqlfacoopBundle::layout.html.twig' %}
+
+{% block title %}Liste des Institutions{% endblock %}
+
+{% block content %}
+
+
+<table class="records_list">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Institution</th>
+            <th>Nature</th>
+            <th>Adresse</th>
+            <th>Pays</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for entity in entities %}
+        <tr>
+            <td><a href="{{ path('institution_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+            <td>{{ entity.institution }}</td>
+            <td>{{ entity.nature }}</td>
+            <td>{{ entity.adresse }}</td>
+            <td>{{ entity.pays }}</td>
+            <td>
+                <ul>
+                    <li>
+                        <a href="{{ path('institution_show', { 'id': entity.id }) }}" class="retour" style="color:white">Afficher</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('institution_edit', { 'id': entity.id }) }}" class="modifier" style="color:white">Editer</a>
+                    </li>
+                </ul>
+            </td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+<ul>
+    <li>
+        <a href="{{ path('institution_new') }}" class="ajouter" style="color:white">
+            Ajouter
+        </a>
+    </li>
+</ul>
+
+{% endblock %}

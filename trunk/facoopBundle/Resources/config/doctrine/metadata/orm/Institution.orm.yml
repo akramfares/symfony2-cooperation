@@ -1,0 +1,32 @@
+Institution:
+  type: entity
+  table: institution
+  fields:
+    id:
+      id: true
+      type: integer
+      unsigned: false
+      nullable: false
+      generator:
+        strategy: IDENTITY
+    institution:
+      type: string
+      length: 45
+      fixed: false
+      nullable: true
+    nature:
+      type: string
+      length: 45
+      fixed: false
+      nullable: true
+    adresse:
+      type: string
+      length: 45
+      fixed: false
+      nullable: true
+    pays:
+      type: string
+      length: 45
+      fixed: false
+      nullable: true
+  lifecycleCallbacks: {  }

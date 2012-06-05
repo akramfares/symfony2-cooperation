@@ -1,0 +1,62 @@
+{% extends 'msqlfacoopBundle::layout.html.twig' %}
+
+{% block title %}Coopération n°{{ entity.id }} {% endblock %}
+
+{% block content %}
+
+
+<table class="record_properties">
+    <tbody>
+        <tr>
+            <th>Id</th>
+            <td>{{ entity.id }}</td>
+        </tr>
+        <tr>
+            <th>Objectifs</th>
+            <td>{{ entity.objectifs }}</td>
+        </tr>
+        <tr>
+            <th>Contact</th>
+            <td><b>{{ entity.contacts }}</b> de <b>{{ entity.contacts.institution }}</b></td>
+        </tr>
+        <tr>
+            <th>Domaines</th>
+            <td>
+            	<ul>
+				{% for a in entity.domaines %}
+				    <li>{{ a.domaines }}</li>
+				{% endfor %}
+				</ul>
+	
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<ul class="record_actions">
+    <li>
+        <a href="{{ path('cooperations') }}" class="retour" style="color:white">
+            Retour à la liste
+        </a>
+    </li>
+    <li>
+        <a href="{{ path('cooperations_edit', { 'id': entity.id }) }}" class="modifier" style="color:white">
+            Edit
+        </a>
+    </li>
+    
+    <li>
+        <a href="{{ path('cooperations_adddomaine', { 'id': entity.id }) }}" class="ajouter" style="color:white">
+            Ajouter un domaine
+        </a>
+    </li>
+    
+    <li>
+        <form action="{{ path('cooperations_delete', { 'id': entity.id }) }}" method="post">
+            {{ form_widget(delete_form) }}
+            <button type="submit" class="supprimer" style="color:white">Delete</button>
+        </form>
+    </li>
+</ul>
+
+{% endblock %}

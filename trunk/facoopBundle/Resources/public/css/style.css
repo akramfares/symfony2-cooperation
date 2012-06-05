@@ -1,0 +1,528 @@
+@CHARSET "ISO-8859-1";
+@CHARSET "ISO-8859-1";
+
+*  /* Sélectionne toutes les balises sans exception. On l'appelle le sélecteur universel */
+{
+	
+}
+
+body
+{
+	color : ; /* c'est la couleur du texte le pus répondu c'est d'utiliser notation hexadécimal #XXXXXX */
+	background-color : ; /* Le fond de la page sera noir on peut utiliser la notation vue précedement ainsi que d'autre mais on 
+							aussi la notaion RGBa :rgba(255 , 0, 0, 0.5)
+						 */
+	background-image : ; /* mettre une image en arrière plan : url(" chemin/image.jpeg ") */
+	background-attachment : ; /* la maniére dont votre image d'arrière plan doit se comporter 
+								quand vous utiliser la bare du défilement : fixer | glisser */
+	background-repeat : ;/*
+							no-repeat : le fond ne sera pas répété. L'image sera donc unique sur la page |
+							repeat-x : le fond sera répété uniquement sur la première ligne, horizontalement |
+							repeat-y : le fond sera répété uniquement sur la première colonne, verticalement |
+							repeat : le fond sera répété en mosaïque (par défaut).
+						 */
+	background-position : ;/* deux valeurs en pixels pour indiquer la position du fond par rapport au coin 
+							  supérieur gauche de la page exemple: 15px 30px */
+							  font: normal 90% Tahoma, Verdana, Helvetica, Sans-Serif;
+}
+
+header
+{	
+	background-color : rgba(244 , 244, 244, 1);
+	height:50px;
+	padding-left:3%;
+	padding-right:3%;
+	padding-top:1%;
+}
+
+section
+{
+	border-top : 1px rgba(211 , 211, 211, 1) solid ;
+	border-bottom : 1px rgba(211 , 211, 211, 1) solid ;
+	height:45px;
+	padding-left:3%;
+	padding-right:3%;
+	padding-top:1%;
+}
+
+nav
+{
+	
+	width:200px;
+	height:100%;
+	position : relative;
+	padding-top:1%;
+	float: left;
+	
+}
+
+nav ul 
+{
+	clear : both;
+	margin-top:4px; 
+	line-height : 30px;
+	list-style-type : none ;
+	text-align : left;
+	padding-left:0%;
+	padding-right:0%;
+	padding-top:10%;	
+	margin-left:20%;
+}
+
+nav ul li:hover
+{
+	background-color :rgba(244 , 244, 244, 1);
+}
+
+nav ul li  :focus
+{
+	color :#dd4b39 ;
+	border-left : 3px blue dashed;
+	margin-left:0%;
+	
+}
+
+#corps
+{
+	width:1300px;
+}
+#tableau
+{
+
+	float: left;
+	width:1100px;
+	height:100%;
+	margin-left:0%;
+}
+
+#tableau input[type="checkbox"]
+{
+	
+	width:0px;
+	height:0px;
+	
+}
+
+#tableau th
+{
+	margin-left:10px;
+	margin-top:4px; 
+	text-decoration:  none ; 
+	color : #9999a7; 
+	text-align : left;
+	font-size :14px;
+}
+
+#tableau tr
+{
+	margin-left:10px;
+	margin-top:7px; 
+	text-decoration:  none ;  
+	text-align : left;
+	font-size :18px;
+	height: 30px;
+}
+
+#tableau tr:hover
+{
+	background-color :#ffffd6;
+}
+
+
+
+
+a
+{
+ text-decoration :none;
+}
+
+a:visited
+{
+	color : black;
+}
+
+header input[type="search"]
+{
+	width: 510px;
+	height:30px; 
+	margin-left:55px;
+	margin-top:4px;
+	float:left;
+	
+}
+#document
+{
+	font-size : 24px;
+	color : #dd4b39; /* notation hexadécimal #XXXXXX */
+}
+
+.trier
+{
+	width: 75px;
+	height:30px;
+	background-image: url("../images/trier.gif") ;
+	background-repeat :no-repeat;
+	float:right;
+
+}
+.trier:hover
+{
+	background-image: url("../images/trier2.gif") ;
+}
+
+.parametrer
+{
+	width: 75px;
+	height:32px;
+	background-image: url("../images/parametrer.gif") ;
+	background-repeat :no-repeat;
+	float:right;
+	margin-right:15px;
+
+}
+.parametrer:hover
+{
+	background-image: url("../images/parametrer2.gif") ;
+}
+.image
+{
+	float:left;
+}
+.imagerecherche
+{
+	width: 70px;
+	height:29px;
+	background-image: url("../images/recherche.gif") ;
+	background-repeat :no-repeat;
+	float:left;
+	margin-left:17px;
+	margin-top:4px;
+}
+.imagerecherche:hover
+{
+	width: 70px;
+	height:29px;
+	background-image: url("../images/recherche2.gif") ;
+	background-repeat :no-repeat;
+	float:left;
+	margin-left:17px;
+	margin-top:4px;
+}
+
+
+
+.notification
+{
+	width: 30px;
+	height:30px;
+	background-image: url("../images/notification.gif") ;
+	background-repeat :no-repeat;
+	float:right;
+	margin-right:15px;
+
+	margin-top:4px;
+	
+}
+.notification:hover
+{
+	background-image: url("../images/notification2.gif") ;
+}
+.partager
+{
+	width: 100px;
+	height:30px;
+	background-image: url("../images/partager.gif") ;
+	background-repeat :no-repeat;
+	float:right;
+	margin-right:15px;
+
+	margin-top:4px;
+	background-size: cover;
+}
+.partager:hover
+{
+	background-image: url("../images/partager2.gif") ;
+}
+
+.creer
+{
+	width: 75px;
+	height:32px;
+	background-image: url("../images/creer.gif") ;
+	background-repeat :no-repeat;
+	float:left;
+	margin-left:20%;
+
+
+}
+
+.creer:hover
+{
+	background-image: url("../images/creer2.gif") ;
+}
+
+.creer:focus
+{
+	background-image: url("../images/creer3.gif") ;
+}
+
+.save
+{
+	margin-left:3%;
+	width: 75px;
+	height:32px;
+	background-image: url("../images/save.gif") ;
+	background-repeat :no-repeat;
+	float:left;
+
+}
+.save:hover
+{
+	background-image: url("../images/save2.gif") ;
+}
+.save:focus
+{
+	background-image: url("../images/save3.gif") ;
+}
+
+.photo
+{
+	width: 30px;
+	height:30px;
+	background-image: url("../images/photo.gif") ;
+	background-repeat :no-repeat;
+	float:right;
+	margin-right:15px;
+
+	margin-top:4px;
+	
+}
+.user
+{
+	float:right;
+	margin-right:15px;
+	margin-top:10px;
+	
+}
+.fleche
+{
+	
+	width: 8px;
+	height:5px;
+	background-image: url("../images/flechebas.gif") ;
+	background-repeat :no-repeat;
+	float:right;
+	margin-right:4px;
+	margin-top:15px;
+	background-size: cover;
+}
+#fontStyle
+{
+	margin-left:10px;
+	margin-top:4px; 
+	text-decoration:  none ; 
+	color : #9999a7; 
+}
+
+
+
+
+
+#Titre
+{
+	font-size : ;
+	font-family : ;
+	font-style : ; /* normal | italic |  */
+	font-weight : ; /* mettre en gras : bold | normal */
+	text-decoration :; /* underline : souligné | line-through : barré | overline : ligne au-dessus | blink : clignotant | none : normal  */
+	text-align : ; /* center | justify | right */
+	color : ; /* notation hexadécimal #XXXXXX */
+}
+
+#SousTitre
+{
+
+}
+
+#ParagrapheSimple
+{
+	opacity : ;/*
+				La propriété opacity, très simple, permet d'indiquer le niveau d'opacité (c'est l'inverse de la transparence)
+				Avec une valeur de 1, l'élément sera totalement opaque : c'est le comportement par défaut |
+				Avec une valeur de 0, l'élément sera totalement transparent |
+				Il faut donc choisir une valeur comprise entre 0 et 1
+				*/
+	border-radius : ;/* Les bordures arrondies, On peut aussi préciser la forme de l'arrondi pour chaque coin 
+						par exemple 5px 4px 10px 3px ces valeur suivent l'ordre suivant 1. en haut à gauche 
+																						2. en haut à droite 
+																						3. en bas à droite 
+																						4. en bas à gauche
+					 */
+	box-shadow : ;/*
+					ajouter un ombre à vos boite ceci peux etre appliquer à tout le balise bloc
+					elle prend 4 paramettres :  1.le décalage horizontal de l'ombre 
+												2. le décalage vertical de l'ombre 
+												3. l'adoucissement du dégradé 
+												4. la couleur de l'ombre
+					exemple (6px 6px 0px black)
+				  */
+	box-shadow : /* meme chose que l'exemple précedent */
+}
+
+#ParagrapheImportant
+{
+
+}
+
+#Table
+{
+
+}
+
+#Formulaire
+{
+
+}
+
+.Habillage
+{
+	float  : ; /* permet de faire fotter un élément autour du texte : left | right */
+	clear : ; /*  left : le texte se poursuit en-dessous après un float: left |
+				  right : le texte se poursuit en-dessous après un float: right |
+				  both : le texte se poursuit en-dessous, que ce soit après un float: left; ou aprèsun float: right; */
+}
+
+.JolieImage
+{
+	border : ;/*
+				La largeur : il faut donner une valuer en  pixel tel que 5px
+				La couleur : en suit les meme façon vues précédement pour préciser une  couleur (RGB,RGBa,héxadécimal)
+				Le type de bordure : ( none : pas de bordure (par défaut) |
+									   solid : un trait simple |
+									   dotted : pointillés |
+									   dashed : tirets |
+									   double : bordure double |
+									   groove : en relief |
+									   ridge : autre effet relief |
+									   inset : effet 3D global enfoncé |
+									   outset : effet 3D global surélevé |
+				à tire d'exemple voilà une combinison possible (border : 3px blue dashed )
+			  */
+	border-top : ; /* bordure du haut meme utilisation que border */
+    border-bottom : ;/* bordure du bas */  
+	border-left : ;
+	border-right : ;
+}
+
+table{
+	width:100%;
+}
+
+ul
+{
+	list-style-type: none;
+	margin:0;
+	padding:0;
+}
+
+
+.ajouter {
+	-moz-box-shadow:inset 0px 1px 0px 0px #caefab;
+	-webkit-box-shadow:inset 0px 1px 0px 0px #caefab;
+	box-shadow:inset 0px 1px 0px 0px #caefab;
+	background-color:#77d42a;
+	-moz-border-radius:6px;
+	-webkit-border-radius:6px;
+	border-radius:6px;
+	border:1px solid #268a16;
+	display:inline-block;
+	color:#285206;
+	font-family:arial;
+	font-size:15px;
+	font-weight:bold;
+	padding:6px 24px;
+	text-decoration:none;
+	text-shadow:1px 1px 0px #aade7c;
+	margin-bottom:4px;
+}.ajouter:hover {
+	background-color:#5cb811;
+}.ajouter:active {
+	position:relative;
+	top:1px;
+}
+
+
+.retour {
+	-moz-box-shadow:inset 0px 1px 0px 0px #bbdaf7;
+	-webkit-box-shadow:inset 0px 1px 0px 0px #bbdaf7;
+	box-shadow:inset 0px 1px 0px 0px #bbdaf7;
+	background-color:#79bbff;
+	-moz-border-radius:6px;
+	-webkit-border-radius:6px;
+	border-radius:6px;
+	border:1px solid #84bbf3;
+	display:inline-block;
+	color:#ffffff;
+	font-family:arial;
+	font-size:15px;
+	font-weight:bold;
+	padding:6px 24px;
+	text-decoration:none;
+	text-shadow:1px 1px 0px #528ecc;
+	margin-bottom:4px;
+}.retour:hover {
+	background-color:#378de5;
+}.retour:active {
+	position:relative;
+	top:1px;
+}
+
+.modifier {
+	-moz-box-shadow:inset 0px 1px 0px 0px #fed897;
+	-webkit-box-shadow:inset 0px 1px 0px 0px #fed897;
+	box-shadow:inset 0px 1px 0px 0px #fed897;
+	background-color:#f6b33d;
+	-moz-border-radius:6px;
+	-webkit-border-radius:6px;
+	border-radius:6px;
+	border:1px solid #eda933;
+	display:inline-block;
+	color:#ffffff;
+	font-family:arial;
+	font-size:15px;
+	font-weight:bold;
+	padding:6px 24px;
+	text-decoration:none;
+	text-shadow:1px 1px 0px #cd8a15;
+	margin-bottom:4px;
+}.modifier:hover {
+	background-color:#d29105;
+}.modifier:active {
+	position:relative;
+	top:1px;
+}
+
+.supprimer {
+	-moz-box-shadow:inset 0px 1px 0px 0px #f5978e;
+	-webkit-box-shadow:inset 0px 1px 0px 0px #f5978e;
+	box-shadow:inset 0px 1px 0px 0px #f5978e;
+	background-color:#f24537;
+	-moz-border-radius:6px;
+	-webkit-border-radius:6px;
+	border-radius:6px;
+	border:1px solid #d02718;
+	display:inline-block;
+	color:#ffffff;
+	font-family:arial;
+	font-size:15px;
+	font-weight:bold;
+	padding:6px 24px;
+	text-decoration:none;
+	text-shadow:1px 1px 0px #810e05;
+	margin-bottom:4px;
+}.supprimer:hover {
+	background-color:#c62d1f;
+}.supprimer:active {
+	position:relative;
+	top:1px;
+}

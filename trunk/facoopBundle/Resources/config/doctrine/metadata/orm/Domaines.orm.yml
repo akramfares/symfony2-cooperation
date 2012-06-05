@@ -1,0 +1,17 @@
+Domaines:
+  type: entity
+  table: domaines
+  fields:
+    id:
+      id: true
+      type: integer
+      unsigned: false
+      nullable: false
+      generator:
+        strategy: IDENTITY
+    domaines:
+      type: string
+      length: 45
+      fixed: false
+      nullable: true
+  lifecycleCallbacks: {  }
