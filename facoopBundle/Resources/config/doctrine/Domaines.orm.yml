@@ -1,0 +1,29 @@
+msql\facoopBundle\Entity\Domaines:
+  type: entity
+  table: domaines
+  fields:
+    id:
+      id: true
+      type: integer
+      unsigned: false
+      nullable: false
+      generator:
+        strategy: IDENTITY
+    domaines:
+      type: string
+      length: 45
+      fixed: false
+      nullable: true
+  lifecycleCallbacks: {  }
+  manyToMany:
+    cooperations:
+      targetEntity: Cooperations
+      inversedBy: domaines
+      joinTable:
+        name: cooperations_has_domaines
+        joinColumns:
+          Domaines_id:
+            referencedColumnName: id
+        inverseJoinColumns:
+          Cooperations_id:
+            referencedColumnName: id

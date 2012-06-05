@@ -1,0 +1,52 @@
+Contacts:
+  type: entity
+  table: contacts
+  fields:
+    id:
+      id: true
+      type: integer
+      unsigned: false
+      nullable: false
+      generator:
+        strategy: IDENTITY
+    nom:
+      type: string
+      length: 45
+      fixed: false
+      nullable: true
+    prenom:
+      type: string
+      length: 45
+      fixed: false
+      nullable: true
+    fonction:
+      type: string
+      length: 45
+      fixed: false
+      nullable: true
+    tel:
+      type: string
+      length: 45
+      fixed: false
+      nullable: true
+    fax:
+      type: string
+      length: 45
+      fixed: false
+      nullable: true
+    mail:
+      type: string
+      length: 45
+      fixed: false
+      nullable: true
+  oneToOne:
+    institution:
+      targetEntity: Institution
+      cascade: {  }
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        Institution_id:
+          referencedColumnName: id
+      orphanRemoval: false
+  lifecycleCallbacks: {  }

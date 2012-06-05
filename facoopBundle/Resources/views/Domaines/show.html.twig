@@ -1,0 +1,39 @@
+{% extends 'msqlfacoopBundle::layout.html.twig' %}
+
+{% block title %}Domaine : {{ entity.domaines }} {% endblock %}
+
+{% block content %}
+
+<table class="record_properties">
+    <tbody>
+        <tr>
+            <th>Id</th>
+            <td>{{ entity.id }}</td>
+        </tr>
+        <tr>
+            <th>Domaines</th>
+            <td>{{ entity.domaines }}</td>
+        </tr>
+    </tbody>
+</table>
+
+<ul class="record_actions">
+    <li>
+        <a href="{{ path('domaines') }}" class="retour" style="color:white">
+            Retour à la liste
+        </a>
+    </li>
+    <li>
+        <a href="{{ path('domaines_edit', { 'id': entity.id }) }}" class="modifier" style="color:white">
+            Edit
+        </a>
+    </li>
+    <li>
+        <form action="{{ path('domaines_delete', { 'id': entity.id }) }}" method="post">
+            {{ form_widget(delete_form) }}
+            <button type="submit" class="supprimer" style="color:white">Delete</button>
+        </form>
+    </li>
+</ul>
+
+{% endblock %}

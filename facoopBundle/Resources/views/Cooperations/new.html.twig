@@ -1,0 +1,43 @@
+{% extends 'msqlfacoopBundle::layout.html.twig' %}
+
+{% block title %}Ajouter une Coopération{% endblock %}
+
+{% block content %}
+
+
+<form action="{{ path('cooperations_create') }}" method="post" {{ form_enctype(form) }}>
+    <div class="error">
+	{{ form_errors(form) }}
+	</div>
+	<table>
+	    <tr>
+			<td>{{ form_label(form.objectifs) }}</td>
+			<td>
+			{{ form_errors(form.objectifs) }}
+			{{ form_widget(form.objectifs) }}
+			</td>
+		</tr>
+		<tr>
+			<td>{{ form_label(form.contacts) }}</td>
+			<td>
+			{{ form_errors(form.contacts) }}
+			{{ form_widget(form.contacts) }}
+			</td>
+		</tr>
+	</table>
+	
+	{{ form_rest(form) }}
+	
+	<input type="submit" class="ajouter" style="color:white"/>
+</form>
+
+<ul class="record_actions">
+    <li>
+        <a href="{{ path('cooperations') }}" class="retour" style="color:white">
+            Retour à la liste
+        </a>
+    </li>
+</ul>
+
+
+{% endblock %}

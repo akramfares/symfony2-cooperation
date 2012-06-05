@@ -1,0 +1,17 @@
+CooperationsHasDomaines:
+  type: entity
+  table: cooperations_has_domaines
+  fields:
+    cooperationsId:
+      id: true
+      type: integer
+      unsigned: false
+      nullable: false
+      column: Cooperations_id
+    domainesId:
+      id: true
+      type: integer
+      unsigned: false
+      nullable: false
+      column: Domaines_id
+  lifecycleCallbacks: {  }

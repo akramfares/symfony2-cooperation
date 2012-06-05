@@ -1,0 +1,57 @@
+{% extends 'msqlfacoopBundle::layout.html.twig' %}
+
+{% block title %}Ajouter une Institution{% endblock %}
+
+{% block content %}
+
+
+<form action="{{ path('institution_create') }}" method="post" {{ form_enctype(form) }}>
+    <div class="error">
+	{{ form_errors(form) }}
+	</div>
+	<table>
+	    <tr>
+			<td>{{ form_label(form.institution) }}</td>
+			<td>
+			{{ form_errors(form.institution) }}
+			{{ form_widget(form.institution) }}
+			</td>
+		</tr>
+		<tr>
+			<td>{{ form_label(form.nature) }}</td>
+			<td>
+			{{ form_errors(form.nature) }}
+			{{ form_widget(form.nature) }}
+			</td>
+		</tr>
+		<tr>
+			<td>{{ form_label(form.adresse) }}</td>
+			<td>
+			{{ form_errors(form.adresse) }}
+			{{ form_widget(form.adresse) }}
+			</td>
+		</tr>
+		<tr>
+			<td>{{ form_label(form.pays) }}</td>
+			<td>
+			{{ form_errors(form.pays) }}
+			{{ form_widget(form.pays) }}
+			</td>
+		</tr>
+	</table>
+	
+	{{ form_rest(form) }}
+	
+	<input type="submit" class="ajouter" style="color:white"/>
+</form>
+
+<ul class="record_actions">
+    <li>
+        <a href="{{ path('institution') }}" class="retour" style="color:white">
+            Retour à la liste
+        </a>
+    </li>
+</ul>
+
+
+{% endblock %}

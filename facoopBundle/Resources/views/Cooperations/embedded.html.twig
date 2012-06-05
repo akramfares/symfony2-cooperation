@@ -1,0 +1,109 @@
+{% extends 'msqlfacoopBundle::layout.html.twig' %}
+
+{% block title %}Ajouter une Coopération Complète{% endblock %}
+
+{% block content %}
+
+
+<form action="{{ path('cooperations_embeddedcreate') }}" method="post" {{ form_enctype(form) }}>
+    <div class="error">
+	{{ form_errors(form) }}
+	</div>
+	<table>
+		<tr><td><h2>Coopération</h2></h2></td></tr>
+	    <tr>
+			<td>{{ form_label(form.objectifs) }}</td>
+			<td>
+			{{ form_errors(form.objectifs) }}
+			{{ form_widget(form.objectifs) }}
+			</td>
+		</tr>
+		<tr><td><h2>Contact</h2></h2></td></tr>
+		<tr>
+			<td>{{ form_label(form.contacts.nom) }}</td>
+			<td>
+			{{ form_errors(form.contacts.nom) }}
+			{{ form_widget(form.contacts.nom) }}
+			</td>
+		</tr>
+		<tr>
+			<td>{{ form_label(form.contacts.prenom) }}</td>
+			<td>
+			{{ form_errors(form.contacts.prenom) }}
+			{{ form_widget(form.contacts.prenom) }}
+			</td>
+		</tr>
+		<tr>
+			<td>{{ form_label(form.contacts.fonction) }}</td>
+			<td>
+			{{ form_errors(form.contacts.fonction) }}
+			{{ form_widget(form.contacts.fonction) }}
+			</td>
+		</tr>
+		<tr>
+			<td>{{ form_label(form.contacts.tel) }}</td>
+			<td>
+			{{ form_errors(form.contacts.tel) }}
+			{{ form_widget(form.contacts.tel) }}
+			</td>
+		</tr>
+		<tr>
+			<td>{{ form_label(form.contacts.fax) }}</td>
+			<td>
+			{{ form_errors(form.contacts.fax) }}
+			{{ form_widget(form.contacts.fax) }}
+			</td>
+		</tr>
+		<tr>
+			<td>{{ form_label(form.contacts.mail) }}</td>
+			<td>
+			{{ form_errors(form.contacts.mail) }}
+			{{ form_widget(form.contacts.mail) }}
+			</td>
+		</tr>
+		<tr><td><h2>Institution</h2></h2></td></tr>
+		<tr>
+			<td>{{ form_label(form.contacts.institution.institution) }}</td>
+			<td>
+			{{ form_errors(form.contacts.institution.institution) }}
+			{{ form_widget(form.contacts.institution.institution) }}
+			</td>
+		</tr>
+		<tr>
+			<td>{{ form_label(form.contacts.institution.nature) }}</td>
+			<td>
+			{{ form_errors(form.contacts.institution.nature) }}
+			{{ form_widget(form.contacts.institution.nature) }}
+			</td>
+		</tr>
+		<tr>
+			<td>{{ form_label(form.contacts.institution.adresse) }}</td>
+			<td>
+			{{ form_errors(form.contacts.institution.adresse) }}
+			{{ form_widget(form.contacts.institution.adresse) }}
+			</td>
+		</tr>
+		<tr>
+			<td>{{ form_label(form.contacts.institution.pays) }}</td>
+			<td>
+			{{ form_errors(form.contacts.institution.pays) }}
+			{{ form_widget(form.contacts.institution.pays) }}
+			</td>
+		</tr>
+	</table>
+	
+	{{ form_rest(form) }}
+	
+	<input type="submit" class="ajouter" style="color:white"/>
+</form>
+
+<ul class="record_actions">
+    <li>
+        <a href="{{ path('cooperations') }}" class="retour" style="color:white">
+            Retour à la liste
+        </a>
+    </li>
+</ul>
+
+
+{% endblock %}

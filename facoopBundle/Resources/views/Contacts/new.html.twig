@@ -1,0 +1,78 @@
+{% extends 'msqlfacoopBundle::layout.html.twig' %}
+
+{% block title %}Ajouter un Contact{% endblock %}
+
+{% block content %}
+
+
+<form action="{{ path('contacts_create') }}" method="post" {{ form_enctype(form) }}>
+    <div class="error">
+	{{ form_errors(form) }}
+	</div>
+	<table>
+	    <tr>
+			<td>{{ form_label(form.nom) }}</td>
+			<td>
+			{{ form_errors(form.nom) }}
+			{{ form_widget(form.nom) }}
+			</td>
+		</tr>
+		<tr>
+			<td>{{ form_label(form.prenom) }}</td>
+			<td>
+			{{ form_errors(form.prenom) }}
+			{{ form_widget(form.prenom) }}
+			</td>
+		</tr>
+		<tr>
+			<td>{{ form_label(form.fonction) }}</td>
+			<td>
+			{{ form_errors(form.fonction) }}
+			{{ form_widget(form.fonction) }}
+			</td>
+		</tr>
+		<tr>
+			<td>{{ form_label(form.tel) }}</td>
+			<td>
+			{{ form_errors(form.tel) }}
+			{{ form_widget(form.tel) }}
+			</td>
+		</tr>
+		<tr>
+			<td>{{ form_label(form.fax) }}</td>
+			<td>
+			{{ form_errors(form.fax) }}
+			{{ form_widget(form.fax) }}
+			</td>
+		</tr>
+		<tr>
+			<td>{{ form_label(form.mail) }}</td>
+			<td>
+			{{ form_errors(form.mail) }}
+			{{ form_widget(form.mail) }}
+			</td>
+		</tr>
+		<tr>
+			<td>{{ form_label(form.institution) }}</td>
+			<td>
+			{{ form_errors(form.institution) }}
+			{{ form_widget(form.institution) }}
+			</td>
+		</tr>
+	</table>
+	
+	{{ form_rest(form) }}
+	
+	<input type="submit" class="ajouter" style="color:white"/>
+</form>
+
+<ul class="record_actions">
+    <li>
+        <a href="{{ path('contacts') }}" class="retour" style="color:white">
+            Retour à la liste
+        </a>
+    </li>
+</ul>
+
+
+{% endblock %}

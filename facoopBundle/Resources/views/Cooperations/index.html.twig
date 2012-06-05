@@ -1,0 +1,50 @@
+{% extends 'msqlfacoopBundle::layout.html.twig' %}
+
+{% block title %}Liste des Coopérations{% endblock %}
+
+{% block content %}
+
+
+<table class="records_list">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Objectifs</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for entity in entities %}
+        <tr>
+            <td><a href="{{ path('cooperations_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+            <td>{{ entity.objectifs }}</td>
+            <td>
+                <ul>
+                    <li>
+                        <a href="{{ path('cooperations_show', { 'id': entity.id }) }}" class="retour" style="color:white">Afficher</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('cooperations_edit', { 'id': entity.id }) }}" class="modifier" style="color:white">Editer</a>
+                    </li>
+                </ul>
+            </td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+<ul>
+    <li>
+        <a href="{{ path('cooperations_new') }}" class="ajouter" style="color:white">
+            Ajouter
+        </a>
+    </li>
+    <li>
+        <a href="{{ path('cooperations_embedded') }}" class="ajouter" style="color:white">
+            Ajout complet
+        </a>
+    </li>
+</ul>
+
+
+{% endblock %}

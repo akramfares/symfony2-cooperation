@@ -1,0 +1,83 @@
+{% extends 'msqlfacoopBundle::layout.html.twig' %}
+
+{% block title %}Editer le Contact{% endblock %}
+
+{% block content %}
+
+
+<form action="{{ path('contacts_update', { 'id': entity.id }) }}" method="post" {{ form_enctype(edit_form) }}>
+     <div class="error">
+	{{ form_errors(edit_form) }}
+	</div>
+	<table>
+	    <tr>
+			<td>{{ form_label(edit_form.nom) }}</td>
+			<td>
+			{{ form_errors(edit_form.nom) }}
+			{{ form_widget(edit_form.nom) }}
+			</td>
+		</tr>
+		<tr>
+			<td>{{ form_label(edit_form.prenom) }}</td>
+			<td>
+			{{ form_errors(edit_form.prenom) }}
+			{{ form_widget(edit_form.prenom) }}
+			</td>
+		</tr>
+		<tr>
+			<td>{{ form_label(edit_form.fonction) }}</td>
+			<td>
+			{{ form_errors(edit_form.fonction) }}
+			{{ form_widget(edit_form.fonction) }}
+			</td>
+		</tr>
+		<tr>
+			<td>{{ form_label(edit_form.tel) }}</td>
+			<td>
+			{{ form_errors(edit_form.tel) }}
+			{{ form_widget(edit_form.tel) }}
+			</td>
+		</tr>
+		<tr>
+			<td>{{ form_label(edit_form.fax) }}</td>
+			<td>
+			{{ form_errors(edit_form.fax) }}
+			{{ form_widget(edit_form.fax) }}
+			</td>
+		</tr>
+		<tr>
+			<td>{{ form_label(edit_form.mail) }}</td>
+			<td>
+			{{ form_errors(edit_form.mail) }}
+			{{ form_widget(edit_form.mail) }}
+			</td>
+		</tr>
+		<tr>
+			<td>{{ form_label(edit_form.institution) }}</td>
+			<td>
+			{{ form_errors(edit_form.institution) }}
+			{{ form_widget(edit_form.institution) }}
+			</td>
+		</tr>
+	</table>
+	
+	{{ form_rest(edit_form) }}
+	
+	<input type="submit" class="modifier" style="color:white"/>
+</form>
+
+<ul class="record_actions">
+    <li>
+        <a href="{{ path('contacts') }}" class="retour" style="color:white">
+            Retour à la liste
+        </a>
+    </li>
+    <li>
+        <form action="{{ path('contacts_delete', { 'id': entity.id }) }}" method="post">
+            {{ form_widget(delete_form) }}
+            <button type="submit" class="supprimer" style="color:white">Delete</button>
+        </form>
+    </li>
+</ul>
+
+{% endblock %}

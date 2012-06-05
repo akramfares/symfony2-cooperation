@@ -1,0 +1,17 @@
+{% extends 'msqlfacoopBundle::layout.html.twig' %}
+
+{% block title %}Ajouter une Coopération{% endblock %}
+
+{% block content %}
+
+{% if message %}
+	<p>{{ message }}</p>
+	{% endif %}
+	
+	<form action="" method="post" {{ form_enctype(form) }}>
+	    {{ form_widget(form) }}
+	    <input type="submit" class="ajouter" style="color:white" />
+	</form>
+
+
+{% endblock %}

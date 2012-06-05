@@ -1,0 +1,60 @@
+<html>
+    <head>
+        <title>{% block title %}TP4 - CRUD{% endblock %}</title>
+        <link rel="stylesheet" href="{{ asset('bundles/msqlfacoop/css/style.css') }}" type="text/css" media="all" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <script type="text/javascript">
+			/* <![CDATA[ */
+			function turnImgCheck(objCheck)
+			{
+				var t=objCheck.src.split('/');
+				t=t[t.length-1];		
+			    objCheck.src = (t == \'{{ asset('bundles/msqlfacoop/images/case.gif') }}\') ? \'{{ asset('bundles/msqlfacoop/images/ca2.gif') }}\' : \'{{ asset('bundles/msqlfacoop/images/google.gif') }}\';  
+			}
+			/* ]]> */
+		</script>
+    </head>
+    <body>
+    	<header class="cssform" >
+			<a href="#" class="image"><img src={{ asset('bundles/msqlfacoop/images/google.gif') }} /></a>
+			<input type="search" />
+			<a href="#" class="imagerecherche"></a>
+			
+			<a href="#" class="fleche"></a>
+			<a href="#" class="photo"></a>
+			<a href="#" class="partager"></a>
+			<a href="#" class="notification" ><div id="fontStyle">0</div></a>
+			<span class="user"><div id="fontStyle"></div></span>
+		</header>
+		
+		<section>
+			<a href="#" class="trier"></a>
+			<a href="#" class="parametrer"></a>
+			<div id="document">{{ block('title') }}</div>
+		</section>
+        <div id="corps">
+			<nav>
+			<a href="#" class="creer"></a>
+			<a href="#" class="save"></a>
+			<ul>
+			
+				<li><a href="#">Accueil</a></li>
+				<li><a href="{{ path('contacts') }}">Contacts</a></li>
+				<li><a href="{{ path('cooperations') }}">Coopérations</a></li>
+				<li><a href="{{ path('domaines') }}">Domaines</a></li>
+				<li><a href="{{ path('institution') }}">Institutions</a></li>
+			</ul>
+			</nav>
+			
+			<div id="tableau">
+	                {% block content %}
+	                {% endblock %}
+			</div>
+		</div> 
+
+	<footer>
+	</footer>
+	
+	</body>
+	
+</html>
